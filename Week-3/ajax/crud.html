@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/milligram.css" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Unit Price</th>
+          <th>Qty</th>
+          <th>Total Price</th>
+          <th>Delete</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody id="itemList"></tbody>
+    </table>
+
+    <a href="create.html" class="button">Create</a>
+
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      const API = "https://crud.teamrabbil.com/api/v1/";
+
+      getList();
+      async function getList() {
+        const {
+          data: { data },
+        } = await axios.get(API + `ReadProduct`);
+        console.log(data);
+
+        data.forEach(async (item) => {
+          document.getElementById("itemList").innerHTML += `
+                <tr>
+                  <td>${item.ProductName}</td>
+                  <td>${item.UnitPrice}</td>
+                  <td>${item.Qty}</td>
+                  <td>${item.TotalPrice}</td>
+                  <td><button onClick="deleteItem('${item._id}')">Delete</button></td>
+                  <td><button onClick="updateItem('${item._id}')">Update</button></td>
+                </tr>
+                `;
+        });
+      }
+
+      async function deleteItem(id) {
+        let res = await axios.get(API + `DeleteProduct/${id}`);
+        if (res.status == 200) {
+          document.getElementById("itemList").innerHTML = "";
+          getList();
+        } else {
+          alert("Error");
+        }
+      }
+
+      async function updateItem(id) {
+        window.location = `update.html?id=${id}`;
+      }
+    </script>
+  </body>
+</html>

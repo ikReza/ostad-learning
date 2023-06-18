@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/milligram.css" />
+    <title>Pokemon</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Delete</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody id="pokemonList"></tbody>
+    </table>
+
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      const API = "https://pokeapi.co/api/v2/pokemon";
+      async function getList() {
+        const {
+          data: { results },
+        } = await axios.get(API);
+        console.log(results);
+
+        const list = results.slice(0, 5);
+
+        list.forEach(async (item) => {
+          let {
+            data: { height, weight, id },
+          } = await axios.get(item.url);
+
+          document.getElementById("pokemonList").innerHTML += `
+            <tr>
+              <td>${item.name}</td>
+              <td>${height}</td>
+              <td>${weight}</td>
+              <td><button onClick="deleteItem(${id})">Delete</button></td>
+              <td><button>Update</button></td>
+            </tr>
+            `;
+        });
+      }
+      getList();
+
+      async function deleteItem(id) {
+        alert(id);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/milligram.css" />
+    <title>Update</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <label for="productName">Product Name:</label>
+        <input
+          type="text"
+          id="productName"
+          id="productName"
+          placeholder="Product Name"
+        />
+        <label for="unitPrice">Unit Price:</label>
+        <input
+          type="number"
+          id="unitPrice"
+          id="unitPrice"
+          placeholder="Unit Price"
+          onkeyup="calculateTotal()"
+        />
+        <label for="qty">Quantity:</label>
+        <input
+          type="number"
+          id="qty"
+          name="qty"
+          placeholder="Quantity"
+          onkeyup="calculateTotal()"
+        />
+        <label for="totalPrice">Total Price:</label>
+        <input type="text" id="totalPrice" name="totalPrice" readonly />
+        <button onclick="createProduct()">Create</button>
+      </div>
+    </div>
+
+    <script src="js/axios.min.js"></script>
+
+    <script>
+      function calculateTotal() {
+        let unitPrice = document.getElementById("unitPrice").value;
+        let qty = document.getElementById("qty").value;
+        let totalPrice = unitPrice * qty;
+
+        document.getElementById("totalPrice").value = totalPrice;
+      }
+
+      const API = "https://crud.teamrabbil.com/api/v1";
+
+      async function createProduct() {
+        let productName = document.getElementById("productName").value;
+        let unitPrice = document.getElementById("unitPrice").value;
+        let qty = document.getElementById("qty").value;
+        let totalPrice = document.getElementById("totalPrice").value;
+
+        let CreateOBJ = {
+          ProductName: productName,
+          UnitPrice: unitPrice,
+          Qty: qty,
+          TotalPrice: totalPrice,
+        };
+
+        let res = await axios.post(`${API}/CreateProduct`, CreateOBJ);
+        if (res.status == 200) {
+          window.location = "crud.html";
+        } else {
+          alert("Error Creating");
+        }
+      }
+    </script>
+  </body>
+</html>
