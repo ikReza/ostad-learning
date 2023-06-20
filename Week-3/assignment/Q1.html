@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeekDay</title>
+  </head>
+  <body>
+    <script>
+      function getDayOfWeek(dateString) {
+        const daysOfWeek = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+
+        const date = new Date(dateString);
+        const dayOfWeek = daysOfWeek[date.getDay()];
+        return dayOfWeek;
+      }
+
+      //   YYYY-MM-DD
+      const dayOfWeek = getDayOfWeek("2023-06-20");
+      console.log(dayOfWeek);
+    </script>
+  </body>
+</html>

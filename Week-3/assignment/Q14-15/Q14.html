@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX GET</title>
+    <link rel="stylesheet" href="milligram.css" />
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Height</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody id="pokemonList"></tbody>
+    </table>
+
+    <script src="axios.min.js"></script>
+
+    <script>
+      const API = "https://pokeapi.co/api/v2/pokemon";
+
+      getList();
+      async function getList() {
+        const {
+          data: { results },
+        } = await axios.get(API);
+        console.log(results);
+
+        const list = results.slice(0, 10);
+
+        list.forEach(async (item) => {
+          let {
+            data: { height, weight },
+          } = await axios.get(item.url);
+
+          document.getElementById("pokemonList").innerHTML += `
+            <tr>
+              <td>${item.name}</td>
+              <td>${height}</td>
+              <td>${weight}</td>
+            </tr>
+            `;
+        });
+      }
+    </script>
+  </body>
+</html>

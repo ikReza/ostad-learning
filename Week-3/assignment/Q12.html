@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Change</title>
+  </head>
+  <body>
+    <!-- Image Change     -->
+
+    <img
+      src="https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg"
+      alt="myImage"
+      width="600"
+      height="400"
+      id="changeImg"
+    />
+    <button id="myBtn">Change Image</button>
+
+    <script>
+      const img = document.getElementById("changeImg");
+      const btn = document.getElementById("myBtn");
+
+      function toggleImg() {
+        img.src ===
+        "https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg"
+          ? (img.src =
+              "https://cdn.pixabay.com/photo/2022/12/01/04/42/man-7628305_1280.jpg")
+          : (img.src =
+              "https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg");
+      }
+
+      btn.addEventListener("click", toggleImg);
+    </script>
+  </body>
+</html>

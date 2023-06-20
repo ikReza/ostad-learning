@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.addEventListener("click", function (event) {
+        alert("Coordinates: (" + event.clientX + ", " + event.clientY + ")");
+      });
+
+      document.addEventListener("keydown", function (event) {
+        alert("Key Code: " + event.keyCode);
+      });
+    </script>
+
+    <!-- Image Change     -->
+
+    <img width="600" height="400" id="changeImg" />
+
+    <script>
+      const img = document.getElementById("changeImg");
+
+      img.src =
+        "https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg";
+
+      img.addEventListener("mouseover", function () {
+        this.src =
+          "https://cdn.pixabay.com/photo/2022/12/01/04/42/man-7628305_1280.jpg";
+      });
+
+      img.addEventListener("mouseout", function () {
+        this.src =
+          "https://cdn.pixabay.com/photo/2022/12/01/04/35/sunset-7628294_1280.jpg";
+      });
+    </script>
+  </body>
+</html>

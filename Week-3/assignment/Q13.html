@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paragraph Example</title>
+  </head>
+  <body>
+    <p class="red" id="red1">This is a paragraph with class red & id red1</p>
+    <p class="blue" id="blue">This is a paragraph with class blue & id blue.</p>
+    <p class="red" id="red2">
+      This is another paragraph with class red & id red2.
+    </p>
+    <p>This is a paragraph with no class or id.</p>
+
+    <script>
+      changeColor();
+
+      function changeColor() {
+        var redParagraphs = document.getElementsByClassName("red");
+
+        for (let i = 0; i < redParagraphs.length; i++) {
+          redParagraphs[i].style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square Root</title>
+  </head>
+  <body>
+    <script>
+      function squareRootOfSumOfSquares(numbers) {
+        const sumOfSquares = numbers.reduce((accumulator, currentValue) => {
+          return accumulator + currentValue * currentValue;
+        }, 0);
+
+        return Math.sqrt(sumOfSquares);
+      }
+
+      let arr = [2, 4, 6, 8];
+      let ans = squareRootOfSumOfSquares(arr);
+      console.log(ans);
+    </script>
+  </body>
+</html>

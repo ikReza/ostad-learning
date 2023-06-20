@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX POST</title>
+  </head>
+  <body>
+    <script src="axios.min.js"></script>
+
+    <script>
+      sendRequest();
+      function sendRequest() {
+        let API = "https://api.example.com/submit";
+        let data = { name: "John Doe", email: "johndoe@example.com" };
+
+        axios
+          .post(API, data)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.error(error.message);
+          });
+      }
+    </script>
+  </body>
+</html>
