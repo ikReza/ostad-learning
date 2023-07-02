@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
         rel="stylesheet"
       />
-      <link rel="icon" type="image/png" href="../public/deliBIRD.png" />
+      <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
       <link rel="stylesheet" href="../dist/output.css" />
 
       <title>deliBIRD</title>
@@ -29,8 +29,8 @@
       </style>
     </head>
     <body>
-      <!-- <div class="bg-gradient-to-r from-teal-400 to-yellow-200"> -->
       <!-- Navbar Start -->
+      <!-- <header class="sticky"> -->
       <nav
         id="navbar"
         class="sticky z-40 bg-white top-0 w-full px-2 py-1 border flex items-center shadow-md drop-shadow-md"
@@ -59,6 +59,108 @@
           <!-- Shopping Cart End -->
         </div>
       </nav>
+      <!-- </header> -->
+
+      <!-- Discount Message Start -->
+      <div
+        class="top-2 py-1 bg-red-50 text-pink-600 text-xs font-code font-semibold tracking-wide text-center"
+      >
+        FIVEK: 10% off on orders over Tk5000 | TENK: 15% off on orders over
+        Tk10000 *T&C apply
+      </div>
+      <!-- Discount Message End -->
+
+      <!-- Product List Start -->
+      <div
+        id="list"
+        class="bg-white grid grid-cols-3 disp sm:grid-cols-4 lg:grid-cols-4 xl-grid-cols-6"
+      ></div>
+      <!-- Product List End -->
+
+      <!-- Sidebar Start -->
+      <section id="cart" class="font-code relative z-30">
+        <div
+          id="sidebar"
+          class="fixed right-0 bottom-0 flex flex-col translate-x-full bg-slate-400 w-3/5 sm:max-w-sm lg:w-80"
+        >
+          <h2 class="font-semibold w-11/12 mx-auto py-5">Cart</h2>
+          <hr class="w-11/12 mx-auto border-slate-400" />
+          <div id="listCart" class="h-1/2 mx-2 overflow-y-auto"></div>
+          <hr class="w-11/12 mx-auto border-slate-400" />
+          <div id="payment" class="w-5/6 mx-auto">
+            <p class="flex justify-between">
+              <span>Subtotal</span>
+              <span id="subtotal">0</span>
+            </p>
+            <p class="flex justify-between">
+              <span>Discount</span>
+              <span id="discountValue">-0</span>
+            </p>
+            <div>
+              <div class="bg-white rounded shadow-inner mt-2 grid grid-cols-3">
+                <input
+                  id="discountCode"
+                  placeholder="Enter coupon here..."
+                  class="col-span-2 bg-white px-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-transparent"
+                />
+                <button
+                  id="discApplyButton"
+                  class="col-span-1 w-full bg-blue-500  text-black font-semibold px-2 disabled:hover:bg-blue-500 disabled:cursor-not-allowed relative group"
+                  disabled
+                >
+                  <span
+                    class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2  bg-red-300 group-hover:translate-x-0"
+                  ></span>
+                  <span
+                    class="absolute inset-0 w-full h-full border-2 border-black"
+                  ></span>
+                  <span class="relative">APPLY</span>
+                </button>
+              </div>
+              <span
+                id="discountMessage"
+                class="text-xs font-medium bg-slate-600 block text-center mt-1"
+              ></span>
+            </div>
+            <br />
+            <p class="flex justify-between font-semibold">
+              <span>Total</span>
+              <span id="total">0</span>
+            </p>
+          </div>
+          <div class="absolute bottom-0 w-full">
+            <button
+              id="clearCart"
+              class="w-full relative inline-flex group items-center justify-center py-1 font-semibold shadow-lg bg-[#233] text-[#FF6347]"
+              onclick="CLEAR_CART()"
+            >
+              <span
+                class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white group-hover:w-full group-hover:h-full opacity-10"
+              ></span>
+              <span class="relative">CLEAR CART</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Sidebar End -->
+
+      <!-- Footer Start -->
+      <footer class="bg-white shadow">
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <span class="block font-code text-sm text-gray-500 text-center">
+          © 2023 <a href="" class="hover:underline">IKReza™</a>. All Rights
+          Reserved.
+        </span>
+      </footer>
+      <!-- Footer End -->
+
+      <!-- Script Tags -->
+      <script src="js/products.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/cart.js"></script>
+      <script src="js/cart.utils.js"></script>
+      <script src="js/cart.price.js"></script>
+      <script src="js/cart.discount.js"></script>
     </body>
   </html>
 </html>
