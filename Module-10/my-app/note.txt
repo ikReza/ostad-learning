@@ -1,0 +1,28 @@
+- Top Level Folders:
+    - app: App Router
+    - public: Static assets to be served
+
+- Top Level Files:
+    - next.config.js: Configuration file for Next.js.
+    - package.json: Project dependencies and scripts.
+    - .gitignore: Git files and folders to ignore.
+    - jsconfig.json: Configuration file for JavaScript.
+    - tailwind.config.js: Configuration file for Tailwind CSS.
+
+
+- App Router:
+
+    - layout.js: It file is the main entry point of the application. All of the components are wrapped within it as its children. 
+      As a result, any code is written in this file will be displayed in every other route pages. 
+      In a nutshell, if something needs to be added that will stay consistent across all routes such as navbar/footer, that should be placed in this file.
+
+    - page.js: This file represent the homepage route of the application.
+
+    - globals.css: It contains the global css style of the entire application.
+
+
+- Routing Conventions:
+    - layout.js: Layout page.
+    - loading.js: Page Loading UI.
+    - not-found.js: Not found UI.
+    - error.js: Error UI.
