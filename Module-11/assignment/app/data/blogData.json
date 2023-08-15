@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "The Future is Here: Learn AI and Machine Learning in 2023",
+    "content": "Artificial Intelligence (AI) and Machine Learning (ML) are two of the most exciting fields in technology today. By learning AI and ML, you'll be able to build intelligent systems that can learn from data and make predictions. In 2023, it's more important than ever to learn these skills as they are becoming increasingly in-demand across industries. Some examples of how AI and ML are being used today include:\n\n1. Predictive Maintenance\n2. Fraud Detection\n3. Personalized Marketing\n4. Chatbots\n5. Image and Speech Recognition\n\nBy learning AI and ML, you'll be able to build your own intelligent systems and stay ahead of the curve in your career.",
+    "date": "01-01-2023"
+  },
+  {
+    "id": 2,
+    "title": "Why Next.js is the Future of Web Development",
+    "content": "Next.js is a powerful framework for building server-side rendered React applications that is quickly becoming the standard for web development. By using Next.js, you'll be able to build high-performance web applications that are optimized for search engines and easy to deploy. Some benefits of using Next.js include:\n\n1. Automatic Code Splitting\n2. SEO Optimization\n3. Built-in CSS Support\n4. Easy Deployment\n5. Improved Performance\n\nBy using Next.js, you'll be able to build web applications that are faster, more reliable, and easier to maintain.",
+    "date": "01-02-2023"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript: The Language That Powers the Web",
+    "content": "JavaScript is one of the most popular programming languages in the world and is used to build everything from simple websites to complex web applications. By learning JavaScript, you'll be able to build your own websites and web applications from scratch. Some reasons why JavaScript is such an important language include:\n\n1. It's Versatile\n2. It's Easy to Learn\n3. It's In-Demand\n4. It's Fun!\n5. It's Everywhere!\n\nBy learning JavaScript, you'll be able to build your own websites and web applications, and you'll have a valuable skill that is in high demand by employers.",
+    "date": "01-03-2023"
+  }
+]
