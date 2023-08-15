@@ -12,7 +12,7 @@ export default function Home() {
       </p>
       <p className="mt-12">
         You can read my blogs here 👉{" "}
-        <Link href="/blog" className="font-bold">
+        <Link href="/blog" className="font-bold hover:text-green-300">
           Blog
         </Link>
       </p>
