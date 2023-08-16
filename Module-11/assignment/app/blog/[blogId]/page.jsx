@@ -19,7 +19,7 @@ const Post = ({ params: { blogId } }) => {
   ) : (
     <div className="mx-5">
       <p className=" mt-6 mb-2 text-xl dark:text-cyan-500">{blog.title}</p>
-      <p className="text-white text-justify">{blog.content}</p>
+      <p className="dark:text-white text-justify">{blog.content}</p>
       <p className="text-slate-400 text-sm text-right mt-4">{blog.date}</p>
       <button className="btn btn-info">
         <Link href="/blog" className="font-bold ">
