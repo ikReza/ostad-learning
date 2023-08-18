@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="h-full px-6 mx-auto text-center dark:text-white">
+    <main className="h-full px-6 mx-auto text-center text-white">
       <p className="mt-12 text-2xl">
         Hi 👋,&nbsp;
         <span className="whitespace-nowrap block text-3xl">
