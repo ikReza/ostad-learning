@@ -49,6 +49,7 @@ const Home = () => {
                 height={0}
                 sizes="100vw"
                 className="w-full"
+                priority
               />
               <div className="px-6 py-4">
                 <h3 className="font-bold text-lg mb-2">{post.title}</h3>

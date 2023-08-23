@@ -2,9 +2,9 @@
 
 import { Barriecito } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Navlink from "./Navlink";
 
 const inter = Barriecito({
   weight: "400",
@@ -44,40 +44,7 @@ const Navbar = () => {
             open ? "" : "hidden"
           } w-full md:block md:w-auto mt-4 md:mt-0`}
         >
-          <ul className="flex flex-col border border-gray-100 p-4 rounded-lg md:flex-row md:space-x-8 md:border-0">
-            <li>
-              <Link
-                href="/"
-                className="block py-2 rounded hover:bg-gray-50 px-3 md:p-0 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="block py-2 rounded hover:bg-gray-50 px-3 md:p-0 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog"
-                className="block py-2 rounded hover:bg-gray-50 px-3 md:p-0 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="block py-2 rounded hover:bg-gray-50 px-3 md:p-0 md:hover:bg-transparent md:border-0 md:hover:text-blue-700"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
+          <Navlink />
         </div>
       </nav>
     </header>
