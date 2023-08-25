@@ -1,17 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import blogData from "../_data/blogData.json";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { AiOutlineDoubleRight } from "react-icons/ai";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-
-// import required modules
-import { Autoplay, Navigation } from "swiper/modules";
-import Link from "next/link";
+import ImgNavigation from "./components/homeComponents/ImgNavigation";
+import FanAvatar from "./components/homeComponents/FanAvatar";
 
 const Home = () => {
   return (
@@ -34,80 +25,19 @@ const Home = () => {
         </p>
       </section>
 
-      <section className="flex w-full">
+      <section className="flex w-full max-md:flex-col">
         <div className="max-w-md basis-4/5 rounded shadow-lg overflow-hidden text-justify mx-auto my-5">
-          <Swiper
-            slidesPerView={1}
-            navigation={true}
-            loop={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay, Navigation]}
-            className="mySwiper w-full"
-          >
-            {blogData.map((post) => (
-              <SwiperSlide key={post.id}>
-                <Image
-                  src={post.img}
-                  alt="yoga"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="w-full"
-                  priority
-                />
-                {/* AiOutlineDoubleRight */}
-                <div className="px-6 py-4">
-                  <h3 className="font-bold text-lg mb-2">{post.title}</h3>
-                  <p>{post.content.split(" ").slice(0, 25).join(" ")} ...</p>
-                  <Link
-                    href={`/blog/${post.id}`}
-                    className="flex items-center justify-end gap-2 text-xs text-slate-500 italic mt-4"
-                  >
-                    Read more <AiOutlineDoubleRight />
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <ImgNavigation />
         </div>
 
-        <div className="basis-1/5 shadow-2xl bg-slate-100 rounded-xl px-4 my-5">
+        <div className="basis-1/5 shadow-2xl bg-slate-100 rounded-xl p-4 my-5 max-md:mx-4">
           <h3 className="text-lg font-medium my-5">Top Fans</h3>
           <div className="flex items-center space-x-4 mb-4">
-            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-              <svg
-                class="absolute w-12 h-12 text-gray-400 -left-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </div>
-            <h5>John Doe</h5>
+            <FanAvatar />
+            <h5>Jane Doe</h5>
           </div>
           <div className="flex items-center space-x-4">
-            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-              <svg
-                class="absolute w-12 h-12 text-gray-400 -left-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </div>
+            <FanAvatar />
             <h5>William Smith</h5>
           </div>
         </div>
