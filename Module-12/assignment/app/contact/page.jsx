@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <div className="mx-auto my-4">
-      <form className="w-full max-w-lg">
+      <form className="w-full max-w-lg px-2">
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label

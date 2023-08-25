@@ -26,7 +26,7 @@ const Home = () => {
       </section>
 
       <section className="flex w-full max-md:flex-col">
-        <div className="max-w-md basis-4/5 rounded shadow-lg overflow-hidden text-justify mx-auto my-5">
+        <div className="max-w-md basis-4/5 rounded shadow-lg overflow-hidden mx-2 my-5">
           <ImgNavigation />
         </div>
 

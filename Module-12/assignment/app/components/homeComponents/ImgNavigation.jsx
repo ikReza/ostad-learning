@@ -22,7 +22,7 @@ const ImgNavigation = () => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay, Navigation]}
-      className="mySwiper w-full"
+      className="mySwiper w-screen"
     >
       {blogData.map((post) => (
         <SwiperSlide key={post.id}>
