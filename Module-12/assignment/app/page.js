@@ -25,12 +25,12 @@ const Home = () => {
         </p>
       </section>
 
-      <section className="flex w-full max-md:flex-col">
-        <div className="max-w-md basis-4/5 rounded shadow-lg overflow-hidden mx-2 my-5">
+      <section className="grid max-md:grid-rows-2 md:grid-cols-5 w-full border">
+        <div className="max-w-md max-md:row-span-1 md:col-span-4 rounded shadow-lg overflow-hidden mx-auto my-5 border">
           <ImgNavigation />
         </div>
 
-        <div className="basis-1/5 shadow-2xl bg-slate-100 rounded-xl p-4 my-5 max-md:mx-4">
+        <div className="max-md:w-3/5 max-md:row-span-1 md:cols-span-1 shadow-2xl bg-slate-100 rounded-xl p-4 my-5 mx-auto border">
           <h3 className="text-lg font-medium my-5">Top Fans</h3>
           <div className="flex items-center space-x-4 mb-4">
             <FanAvatar />
