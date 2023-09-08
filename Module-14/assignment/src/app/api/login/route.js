@@ -32,7 +32,7 @@ export async function POST(req) {
     };
 
     // Send email
-    transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
 
     let cookie = await TokenCookie(email);
 
