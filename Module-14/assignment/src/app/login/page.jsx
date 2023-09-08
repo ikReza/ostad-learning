@@ -25,6 +25,7 @@ const Login = () => {
     const data = await response.json();
 
     if (data.status === true) {
+      console.log(data);
       toast.success(data.message);
       router.replace("/dashboard");
     } else {
@@ -40,7 +41,7 @@ const Login = () => {
       <form
         onSubmit={handleSubmit}
         className="bg-[#233] text-[tomato] p-4 rounded-lg shadow-lg hover:shadow-gray-600 z-10"
-        autocomplete="off"
+        autoComplete="off"
       >
         <label htmlFor="username">
           Name <sup>*</sup>

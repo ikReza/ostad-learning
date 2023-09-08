@@ -17,5 +17,6 @@ export async function CreateToken(email) {
 export async function VerifyToken(token) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
   let decode = await jwtVerify(token, secret);
+  console.log(decode);
   return decode.payload;
 }

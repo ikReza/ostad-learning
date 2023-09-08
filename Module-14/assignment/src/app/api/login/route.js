@@ -32,7 +32,18 @@ export async function POST(req) {
     };
 
     // Send email
-    transporter.sendMail(mailOptions);
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        return NextResponse.json(
+          { status: false, message: "Failed to send email" },
+          { status: 500 }
+        );
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+
     let cookie = await TokenCookie(email);
 
     return NextResponse.json(

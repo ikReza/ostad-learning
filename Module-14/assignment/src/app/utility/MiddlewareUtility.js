@@ -6,7 +6,9 @@ export async function checkCookieAuth(req) {
   try {
     let authToken = req.cookies.get("token");
     console.log("authToken", authToken);
+    console.log("authToken", authToken);
     let payload = await VerifyToken(authToken.value);
+    console.log("payload", payload);
 
     const requestHeaders = new Headers(req.headers);
     requestHeaders.set("email", payload.email);
