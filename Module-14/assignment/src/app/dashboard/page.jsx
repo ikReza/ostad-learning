@@ -1,7 +1,7 @@
 const Dashboard = () => {
   return (
     <div className="w-2/3 mx-auto">
-      <h2 className="text-center text-2xl font-medium my-4">
+      <h2 className="text-center text-2xl font-medium my-4 text-white">
         Welcome to Dashboard
       </h2>
       <form className="bg-[#233] text-[tomato] p-4 rounded-lg shadow-lg hover:shadow-gray-600 z-10">

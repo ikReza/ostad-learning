@@ -25,9 +25,8 @@ const Login = () => {
     const data = await response.json();
 
     if (data.status === true) {
+      router.replace("/dashboard");
       toast.success(data.message);
-      // router.replace("/dashboard");
-      router.push("/dashboard");
     } else {
       toast.error(data.message);
     }
