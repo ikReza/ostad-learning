@@ -1,0 +1,37 @@
+-- CreateTable
+CREATE TABLE `User` (
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `firstName` VARCHAR(50) NOT NULL,
+    `middleName` VARCHAR(50) NULL,
+    `lastName` VARCHAR(50) NOT NULL,
+    `mobile` VARCHAR(15) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `passwordHash` VARCHAR(32) NOT NULL,
+    `registeredAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `lastLogin` DATETIME NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `intro` TINYTEXT NULL,
+    `profile` TEXT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Post` (
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `authorId` BIGINT UNSIGNED NOT NULL,
+    `parentId` BIGINT NULL,
+    `title` VARCHAR(75) NOT NULL,
+    `metaTitle` VARCHAR(100) NULL,
+    `slug` VARCHAR(100) NOT NULL,
+    `summary` TINYTEXT NULL,
+    `published` TINYINT NOT NULL,
+    `createdAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `publishedAt` DATETIME NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `content` TEXT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Post` ADD CONSTRAINT `Post_authorId_fkey` FOREIGN KEY (`authorId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
