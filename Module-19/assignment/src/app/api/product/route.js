@@ -61,9 +61,23 @@ export async function DELETE(req, res) {
     const { searchParams } = new URL(req.url);
     const id = searchParams.get("id");
 
-    let result = await prisma.Product.delete({
+    let deleteProduct = await prisma.Product.delete({
       where: { id: parseInt(id) },
     });
+
+    let deleteProductMeta = await prisma.Product_Meta.delete({
+      where: { productId: parseInt(id) },
+    });
+
+    let deleteProductReview = await prisma.Product_Review.delete({
+      where: { productId: parseInt(id) },
+    });
+
+    const result = await prisma.$transaction([
+      deleteProduct,
+      deleteProductMeta,
+      deleteProductReview,
+    ]);
 
     return NextResponse.json({ status: "success", data: result });
   } catch (err) {
